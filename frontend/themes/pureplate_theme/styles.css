@@ -4,7 +4,49 @@
         display: none;
     }
 }
+
 a[highlight] {
     font-weight: bold;
     text-decoration: underline;
+}
+
+.transparent {
+    opacity: 0.5!important;
+}
+.badge-score {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.4em calc(0.5em + var(--lumo-border-radius-s) / 4);
+    color: var(--lumo-primary-text-color);
+    border-radius: var(--lumo-border-radius-s);
+    font-family: var(--lumo-font-family);
+    font-size: var(--lumo-font-size-s);
+    line-height: 1;
+    font-weight: 500;
+    text-transform: initial;
+    letter-spacing: initial;
+    min-width: calc(var(--lumo-line-height-xs) * 1em + 0.45em);
+    flex-shrink: 0;
+}
+
+.badge-score-cosmetic {
+    background-color: red!important;
+    color: white;
+}
+
+.badge-score-industrialized {
+    background-color: orange!important;
+    color: white;
+}
+
+.badge-score-minimally {
+    background-color: blue!important;
+    color: white;
+}
+
+.badge-score-natural {
+    background-color: green!important;
+    color: white;
 }

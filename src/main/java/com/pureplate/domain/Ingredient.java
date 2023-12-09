@@ -17,6 +17,7 @@ public class Ingredient extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private IngredientType ingredientType;
 
+    @Lob
     private String reason;
 
     @Transient

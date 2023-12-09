@@ -54,6 +54,7 @@ public class IngredientListView extends VerticalLayout {
         ingredientForm.addSaveListener(this::saveIngredient);
         ingredientForm.addDeleteListener(this::deleteIngredient);
         ingredientForm.addCloseListener(e -> closeEditor());
+        ingredientForm.addRefreshReasonListener(this::refreshScoreReason);
     }
 
     private void saveIngredient(IngredientForm.SaveEvent event) {
@@ -98,6 +99,10 @@ public class IngredientListView extends VerticalLayout {
             ingredientForm.setIngredient(ingredient);
             ingredientForm.openDialog();
         }
+    }
+    private void refreshScoreReason(IngredientForm.RefreshReasonEvent event) {
+        ingredientService.saveIngredient(event.getIngredient());
+        ingredientForm.setIngredient(event.getIngredient());
     }
 
     private void updateList() {

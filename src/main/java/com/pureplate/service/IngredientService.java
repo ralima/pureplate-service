@@ -41,6 +41,7 @@ public class IngredientService {
         ingredientRepository.delete(ingredient);
     }
 
+
     public void saveIngredient(Ingredient ingredient) {
         if (ingredient == null) {
             System.err.println("Ingredient is null. Are you sure you have connected your form to the application?");
@@ -58,9 +59,10 @@ public class IngredientService {
         }
 
         String reason = "";
-        if(ingredient.getReason() == null) {
+        if(ingredient.getReason() == null || ingredient.getReason().equals("")) {
             String question = GptUtil.getQuestion(QuestionType.INGREDIENT_SCORE_REASON, ingredient.getName(), score);
-            ingredient.setReason(gptService.chat(question));
+            reason = gptService.chat(question);
+            ingredient.setReason(reason);
         }
         ingredientRepository.save(ingredient);
     }
