@@ -2,16 +2,18 @@ package com.pureplate.service;
 
 import com.pureplate.domain.dtos.ChatRequest;
 import com.pureplate.domain.dtos.ChatResponse;
+import com.pureplate.utils.GptUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class GPTService {
-    @Qualifier("openaiRestTemplate")
+
+    @Autowired
+    private GptUtil gptUtil;
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -21,7 +23,7 @@ public class GPTService {
     @Value("${openai.api.url}")
     private String apiUrl;
 
-    public String chat(@RequestParam String prompt) {
+    public String chat(String prompt) {
 
         ChatRequest request = new ChatRequest(model, prompt);
 
@@ -30,8 +32,8 @@ public class GPTService {
         if (response == null || response.getChoices() == null || response.getChoices().isEmpty()) {
             return "No response";
         }
-
-        return response.getChoices().get(0).getMessage().getContent();
+        String answer = response.getChoices().get(0).getMessage().getContent();
+        return answer;
     }
 
 }

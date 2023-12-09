@@ -1,4 +1,4 @@
-package com.pureplate;
+package com.pureplate.controller;
 
 import com.pureplate.domain.dtos.ChatRequest;
 import com.pureplate.domain.dtos.ChatResponse;

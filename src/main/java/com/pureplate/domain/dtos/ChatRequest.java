@@ -9,8 +9,6 @@ import java.util.List;
 public class ChatRequest {
     private String model;
     private List<Message> messages;
-    private int n;
-    private double temperature;
 
     public ChatRequest(String model, String prompt) {
         this.model = model;

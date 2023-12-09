@@ -17,6 +17,8 @@ public class Ingredient extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private IngredientType ingredientType;
 
+    private String reason;
+
     @Transient
     boolean isUltraProcessed() {
         return this.ingredientType.equals(IngredientType.COSMETIC) ? true : false;
