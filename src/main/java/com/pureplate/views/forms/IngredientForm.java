@@ -8,13 +8,15 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.shared.Registration;
 
-public class IngredientForm extends FormLayout {
+public class IngredientForm extends Dialog {
+    FormLayout formLayout = new FormLayout();
     TextField name = new TextField("Name");
     TextField description = new TextField("Description");
     ComboBox<IngredientType> type = new ComboBox<>("Type");
@@ -35,7 +37,8 @@ public class IngredientForm extends FormLayout {
                 Ingredient::getIngredientType,
                 Ingredient::setIngredientType);
 
-        add(name, description, type, createButtonsLayout());
+        formLayout.add(name, description, type, createButtonsLayout());
+        add(formLayout);
     }
 
     public void setIngredient(Ingredient ingredient) {
@@ -62,6 +65,14 @@ public class IngredientForm extends FormLayout {
         if(binder.isValid()) {
             fireEvent(new SaveEvent(this, binder.getBean()));
         }
+    }
+
+    public void openDialog() {
+        this.open();
+    }
+
+    public void closeDialog() {
+        this.close();
     }
 
     // EVENTS

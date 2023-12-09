@@ -96,11 +96,10 @@ public class FoodProductListView extends VerticalLayout {
 
     public void editFoodProduct(FoodProduct foodProduct) {
         if (foodProduct == null) {
-            closeEditor();
+            foodProductForm.closeDialog();
         } else {
             foodProductForm.setFoodProduct(foodProduct);
-            foodProductForm.setVisible(true);
-            addClassName("editing");
+            foodProductForm.openDialog();
         }
     }
 
@@ -110,8 +109,7 @@ public class FoodProductListView extends VerticalLayout {
 
     private void closeEditor() {
         foodProductForm.setFoodProduct(null);
-        foodProductForm.setVisible(false);
-        removeClassName("editing");
+        foodProductForm.closeDialog();
     }
 
     private void addFoodProduct() {

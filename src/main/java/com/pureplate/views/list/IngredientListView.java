@@ -93,11 +93,10 @@ public class IngredientListView extends VerticalLayout {
 
     public void editIngredient(Ingredient ingredient) {
         if (ingredient == null) {
-            closeEditor();
+            ingredientForm.closeDialog();
         } else {
             ingredientForm.setIngredient(ingredient);
-            ingredientForm.setVisible(true);
-            addClassName("editing");
+            ingredientForm.openDialog();
         }
     }
 
@@ -107,8 +106,7 @@ public class IngredientListView extends VerticalLayout {
 
     private void closeEditor() {
         ingredientForm.setIngredient(null);
-        ingredientForm.setVisible(false);
-        removeClassName("editing");
+        ingredientForm.closeDialog();
     }
 
     private void addIngredient() {

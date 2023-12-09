@@ -10,6 +10,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.combobox.MultiSelectComboBox;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -18,7 +19,8 @@ import com.vaadin.flow.shared.Registration;
 
 import java.util.List;
 
-public class FoodProductForm extends FormLayout {
+public class FoodProductForm extends Dialog {
+    FormLayout formLayout = new FormLayout();
     TextField name = new TextField("Name");
     TextField description = new TextField("Description");
     ComboBox<FoodClassification> score = new ComboBox<>("Score");
@@ -50,7 +52,8 @@ public class FoodProductForm extends FormLayout {
                 FoodProduct::getIngredients,
                 FoodProduct::setIngredients);
 
-        add(name, description, score, ingredientsComboBox, createButtonsLayout());
+        formLayout.add(name, description, score, ingredientsComboBox, createButtonsLayout());
+        add(formLayout);
     }
 
     public void setFoodProduct(FoodProduct foodProduct) {
@@ -77,6 +80,14 @@ public class FoodProductForm extends FormLayout {
         if(binder.isValid()) {
             fireEvent(new SaveEvent(this, binder.getBean()));
         }
+    }
+
+    public void openDialog() {
+        this.open();
+    }
+
+    public void closeDialog() {
+        this.close();
     }
 
     // EVENTS
