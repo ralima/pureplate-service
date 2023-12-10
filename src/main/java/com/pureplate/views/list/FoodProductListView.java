@@ -57,6 +57,7 @@ public class FoodProductListView extends VerticalLayout {
         foodProductForm.addSaveListener(this::saveFoodProduct);
         foodProductForm.addDeleteListener(this::deleteFoodProduct);
         foodProductForm.addCloseListener(e -> closeEditor());
+        foodProductForm.addRefreshReasonListener(this::refreshScoreReason);
     }
 
     private void saveFoodProduct(FoodProductForm.SaveEvent event) {
@@ -102,7 +103,10 @@ public class FoodProductListView extends VerticalLayout {
             foodProductForm.openDialog();
         }
     }
-
+    private void refreshScoreReason(FoodProductForm.RefreshReasonEvent event) {
+        foodProductService.saveFoodProduct(event.getFoodProduct());
+        foodProductForm.setFoodProduct(event.getFoodProduct());
+    }
     private void updateList() {
         grid.setItems(foodProductService.findAllFoodProducts(filterText.getValue()));
     }

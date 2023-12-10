@@ -27,21 +27,21 @@ INSERT INTO "INGREDIENTS" (id, version, name, description, ingredient_type) VALU
 (26, 1, 'Propylene Glycol', 'Humectant to retain moisture in processed foods', 'COSMETIC');
 
 INSERT INTO "FOOD_PRODUCTS" (id, version, name, description, score) VALUES
-(1, 1, 'Frozen Pizza', 'Classic Margherita pizza ready to bake at home', 'UNKNOWN'),
-(2, 1, 'Chicken Alfredo Pasta', 'Creamy Alfredo pasta with grilled chicken', 'UNKNOWN'),
-(3, 1, 'Vegetarian Spring Rolls', 'Crispy spring rolls with assorted vegetables', 'UNKNOWN'),
-(4, 1, 'Beef Stir-Fry', 'Savory beef stir-fry with colorful vegetables', 'UNKNOWN'),
-(5, 1, 'Chicken Caesar Salad', 'Fresh salad with grilled chicken and Caesar dressing', 'UNKNOWN'),
-(6, 1, 'Vegetable Lasagna', 'Layers of pasta, vegetables, and cheese in tomato sauce', 'UNKNOWN'),
-(7, 1, 'Shrimp Fried Rice', 'Flavorful fried rice with succulent shrimp', 'UNKNOWN'),
-(8, 1, 'Mushroom Risotto', 'Creamy risotto with sautéed mushrooms', 'UNKNOWN'),
-(9, 1, 'Chocolate Chip Cookies', 'Soft and chewy cookies with chocolate chips', 'UNKNOWN'),
-(10, 1, 'Chicken Quesadillas', 'Grilled tortillas filled with seasoned chicken and cheese', 'UNKNOWN'),
-(11, 1, 'Tomato Basil Soup', 'Comforting soup with ripe tomatoes and fresh basil', 'UNKNOWN'),
-(12, 1, 'Vegetable Curry', 'Spicy curry with a mix of colorful vegetables', 'UNKNOWN'),
-(13, 1, 'Cheeseburger Sliders', 'Mini burgers with melted cheese and condiments', 'UNKNOWN'),
-(14, 1, 'Spinach and Feta Stuffed Chicken', 'Chicken breasts stuffed with spinach and feta', 'UNKNOWN'),
-(15, 1, 'Pesto Pasta Salad', 'Pasta salad tossed in basil pesto with cherry tomatoes', 'UNKNOWN');
+(1, 1, 'Frozen Pizza', 'Classic Margherita pizza ready to bake at home', 'ULTRA_PROCESSED'),
+(2, 1, 'Chicken Alfredo Pasta', 'Creamy Alfredo pasta with grilled chicken', 'PROCESSED_CULINARY_INGREDIENTS'),
+(3, 1, 'Vegetarian Spring Rolls', 'Crispy spring rolls with assorted vegetables', 'PROCESSED'),
+(4, 1, 'Beef Stir-Fry', 'Savory beef stir-fry with colorful vegetables', 'PROCESSED_CULINARY_INGREDIENTS'),
+(5, 1, 'Chicken Caesar Salad', 'Fresh salad with grilled chicken and Caesar dressing', 'PROCESSED_CULINARY_INGREDIENTS'),
+(6, 1, 'Vegetable Lasagna', 'Layers of pasta, vegetables, and cheese in tomato sauce', 'PROCESSED'),
+(7, 1, 'Shrimp Fried Rice', 'Flavorful fried rice with succulent shrimp', 'PROCESSED'),
+(8, 1, 'Mushroom Risotto', 'Creamy risotto with sautéed mushrooms', 'PROCESSED_CULINARY_INGREDIENTS'),
+(9, 1, 'Chocolate Chip Cookies', 'Soft and chewy cookies with chocolate chips', 'ULTRA_PROCESSED'),
+(10, 1, 'Chicken Quesadillas', 'Grilled tortillas filled with seasoned chicken and cheese', 'ULTRA_PROCESSED'),
+(11, 1, 'Tomato Basil Soup', 'Comforting soup with ripe tomatoes and fresh basil', 'PROCESSED_CULINARY_INGREDIENTS'),
+(12, 1, 'Vegetable Curry', 'Spicy curry with a mix of colorful vegetables', 'PROCESSED_CULINARY_INGREDIENTS'),
+(13, 1, 'Cheeseburger Sliders', 'Mini burgers with melted cheese and condiments', 'ULTRA_PROCESSED'),
+(14, 1, 'Spinach and Feta Stuffed Chicken', 'Chicken breasts stuffed with spinach and feta', 'PROCESSED_CULINARY_INGREDIENTS'),
+(15, 1, 'Pesto Pasta Salad', 'Pasta salad tossed in basil pesto with cherry tomatoes', 'PROCESSED_CULINARY_INGREDIENTS');
 
 INSERT INTO "FOOD_PRODUCTS_INGREDIENTS" (food_product_id, ingredient_id) VALUES
 (1, 3),

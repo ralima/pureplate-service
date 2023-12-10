@@ -29,6 +29,8 @@ public class FoodProduct extends AbstractEntity {
 
   @Enumerated(EnumType.STRING)
   private FoodClassification score;
+
+  @Lob
   private String scoreReason;
 
 }
