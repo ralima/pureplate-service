@@ -59,7 +59,6 @@ public class DashboardView extends VerticalLayout {
         y.setTitle("Amount of Ingredients");
         configuration.addyAxis(y);
 
-
         EnumSet.allOf(IngredientType.class).forEach( ingredientType -> {
             ListSeries serie = new ListSeries(ingredientType.name(), ingredientService.countIngredientsPerType(ingredientType));
            configuration.addSeries(serie);

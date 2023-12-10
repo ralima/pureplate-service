@@ -42,13 +42,6 @@ public class FoodProductService {
         }
         String score = "";
         if (foodProduct.getScore() == null) {
-//            String foodscores = Arrays.stream(FoodClassification.values())
-//                    .map(Enum::name)
-//                    .collect(Collectors.joining(", "));
-//            String question = GptUtil.getQuestion(QuestionType.FOOD_TYPE, foodscores, foodProduct.getName());
-//
-//            score = gptService.chat(question);
-//            foodProduct.setScore(FoodClassification.valueOf(score));
             foodProduct.setScore(classify(foodProduct.getIngredients()));
         }
 

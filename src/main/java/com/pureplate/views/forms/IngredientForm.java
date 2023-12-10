@@ -166,5 +166,3 @@ public class IngredientForm extends Dialog {
     }
 
 }
-
-

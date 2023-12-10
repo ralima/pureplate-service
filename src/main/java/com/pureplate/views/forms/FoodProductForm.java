@@ -154,7 +154,6 @@ public class FoodProductForm extends Dialog {
     }
 
     private void updateGaugeChart(FoodClassification classification) {
-        // Logic to determine the gauge value based on classification
         double gaugeValue = calculateGaugeValue(classification);
 
         DataSeries series = (DataSeries) gaugeChart.getConfiguration().getSeries().get(0);

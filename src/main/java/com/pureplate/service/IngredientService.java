@@ -15,11 +15,9 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class IngredientService {
-
     private final IngredientRepository ingredientRepository;
 
     private final GPTService gptService;
-
 
     public List<Ingredient> findAllIngredients(String stringFilter) {
         if (stringFilter == null || stringFilter.isEmpty()) {
@@ -40,8 +38,6 @@ public class IngredientService {
     public void deleteIngredient(Ingredient ingredient) {
         ingredientRepository.delete(ingredient);
     }
-
-
     public void saveIngredient(Ingredient ingredient) {
         if (ingredient == null) {
             System.err.println("Ingredient is null. Are you sure you have connected your form to the application?");

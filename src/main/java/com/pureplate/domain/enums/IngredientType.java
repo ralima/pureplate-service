@@ -15,7 +15,6 @@ public enum IngredientType {
   NATURAL("Natural");
 
   private final String value;
-
   public static Optional<String> getKey(String input) {
     return Arrays.stream(IngredientType.values())
             .filter(ingredientType -> ingredientType.name().equalsIgnoreCase(input) ||

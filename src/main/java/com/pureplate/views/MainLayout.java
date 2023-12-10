@@ -34,7 +34,6 @@ public class MainLayout extends AppLayout {
         addToNavbar(header);
 
     }
-
     private void createDrawer() {
         addToDrawer(new VerticalLayout(
                 new RouterLink("Dashboard", DashboardView.class),
